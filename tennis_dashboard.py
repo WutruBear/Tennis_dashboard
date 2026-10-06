@@ -1373,8 +1373,8 @@ else:
             st.caption("Needs at least one decided (W/L) match.")
 
     with yc4:
-        st.markdown('<div class="section-header">Win rate by season &amp; context</div>', unsafe_allow_html=True)
-        dim = st.radio("Break down by", ["Surface", "Type"], horizontal=True, key="yoy_dim")
+        st.markdown('<div class="section-header">Win rate by season &amp; match type</div>', unsafe_allow_html=True)
+        dim = "Type"
         ctx = _wl(real)
         ctx["Year"] = ctx["Date"].dt.year.astype(str)
         ctx[dim] = ctx[dim].fillna("Unknown")
